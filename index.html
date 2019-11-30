@@ -26,6 +26,7 @@
       background: white;
     }
   </style>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"  />
 </head>
 <body class="text-gray-700 bg-blue-900 select-none" style="font-family: 'Roboto', sans-serif;">
   <div id="app">
@@ -33,9 +34,23 @@
       <div class="container mx-auto p-4 flex justify-center align-center">
         <h1 class="text-xl inline-block px-4 py-1 border border-solid border-gray-700 rounded-lg"><span class="tracking-tighter leading-none" style="font-family: 'Alegreya', serif;">RMMCA</span> <span style="font-family: 'Caveat', cursive;">Intranet</span></h1>
       </div>
-      <section id="slider"></section>
     </header>
     <main class="container mx-auto px-4 text-gray-400 py-16">
+      <section id="slider" class="flex justify-center py-24">
+          <div class="slider w-full md:w-1/2">
+            <div>
+              <p class="align-center text-2xl font-light italic" style="text-align: center">
+                <span style="font-family: 'Caveat', cursive;" class="text-3xl mr-1 text-teal-300">Christmas</span>    Party on the 7th Dec <br> at 6-8pm.
+              </p>
+            </div>
+            <div>
+              <p class="align-center text-2xl font-light italic" style="text-align: center">
+                Happy 
+                <span style="font-family: 'Caveat', cursive;" class="text-3xl ml-1 text-red-300">Holidays!</span>
+              </p>
+            </div>
+          </div>
+      </section>
       <section id="links" class="flex flex-col items-center sm:justify-between md:flex-row md:justify-around">
         <div v-for="category in categories" class="py-4 border border-solid border-gray-400 my-8 py-8 px-6 rounded-lg w-64 sm:w-1/2 md:w-1/4">
           <h2 style="font-family: 'Alegreya', serif;" class="text-xl mb-3 text-red-300">{{ category.title }}</h2>
@@ -50,5 +65,20 @@
     </footer>
   </div>
   <script src="app.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js" ></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js" defer ></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"  ></script>
+  <script >
+    $(document).ready(function(){
+      $('.slider').slick({
+        arrows: false,
+        infinite: true,
+        fade: true,
+        slidesToShow: 1,
+        autoplay: true,
+        focusOnSelect: false
+      });
+    });
+  </script>
 </body>
 </html>
